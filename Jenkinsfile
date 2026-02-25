@@ -3,22 +3,22 @@ pipeline {
   stages {
     stage('clone') {
       steps {
-        git branch:'main' url:https:'//github.com/ashrithoraganti/calculator1.git';
+        git branch:'main' url:'https://github.com/ashrithoraganti/calculator1.git';
       }
     }
     stage('compile') {
       steps {
-        sh 'javac Calculator.java'
+        sh 'javac Calculator1.java'
       }
     }
     stage('build') {
       steps {
-        sh 'java Calculator 25 5'
+        sh 'java Calculator1 25 5'
       }
     }
     stage('test') {
       steps {
-        sh 'java Calculator 30 -5'
+        sh 'java Calculator1 30 -5'
   }
   }
     stage('deploy') {
